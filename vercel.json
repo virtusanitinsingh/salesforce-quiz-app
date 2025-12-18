@@ -1,6 +1,5 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist/salesforce-quiz/browser",
-  "framework": "angular",
-  "nodeVersion": "18.x"
+  "framework": "angular"
 }
