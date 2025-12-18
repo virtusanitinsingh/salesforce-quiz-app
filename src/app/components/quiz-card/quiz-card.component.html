@@ -1,0 +1,106 @@
+<div class="quiz-wrapper" [@cardAnimation]="animationKey">
+  <!-- Progress Bar -->
+  <div class="progress-section">
+    <div class="progress-info">
+      <span class="question-counter">Question {{ getQuestionNumber() }} of {{ progress.totalQuestions }}</span>
+      <span class="score">✓ {{ progress.correctAnswers }} correct</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="progressPercentage"></div>
+    </div>
+  </div>
+
+  <!-- Quiz Card -->
+  <div class="quiz-card">
+    <!-- Question Section -->
+    <div class="question-section">
+      <div class="question-category">
+        <span class="category-badge">{{ currentQuiz?.title }}</span>
+      </div>
+      <h2 class="question-text">{{ currentQuestion?.question }}</h2>
+    </div>
+
+    <!-- Options Section -->
+    <div class="options-section">
+      <div 
+        *ngFor="let option of (currentQuestion?.options | keyvalue); let i = index"
+        class="option-wrapper"
+        [@optionAnimation]="animationKey"
+        [style.animation-delay]="(i * 100) + 'ms'">
+        
+        <button
+          class="option-button"
+          [class.selected]="selectedAnswer === option.key"
+          [class.correct]="showFeedback && option.key === currentQuestion?.correctAnswer"
+          [class.incorrect]="showFeedback && selectedAnswer === option.key && option.key !== currentQuestion?.correctAnswer"
+          [class.disabled]="showFeedback"
+          [disabled]="showFeedback"
+          (click)="selectAnswer(option.key)">
+          
+          <span class="option-key">{{ option.key }}</span>
+          <span class="option-value">{{ option.value }}</span>
+          
+          <span class="feedback-icon" *ngIf="showFeedback">
+            <span *ngIf="option.key === currentQuestion?.correctAnswer" class="icon-correct">✓</span>
+            <span *ngIf="showFeedback && selectedAnswer === option.key && option.key !== currentQuestion?.correctAnswer" class="icon-incorrect">✗</span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Feedback Section -->
+    <div class="feedback-section" *ngIf="showFeedback" [@cardAnimation]="animationKey">
+      <div class="feedback-content">
+        <h3 class="feedback-title">
+          <span *ngIf="selectedAnswer === currentQuestion?.correctAnswer" class="correct-icon">✓</span>
+          <span *ngIf="selectedAnswer !== currentQuestion?.correctAnswer" class="incorrect-icon">✗</span>
+          {{ selectedAnswer === currentQuestion?.correctAnswer ? 'Excellent!' : 'Not quite right' }}
+        </h3>
+        
+        <div class="explanation">
+          <p class="explanation-label">💡 Explanation:</p>
+          <p class="explanation-text">{{ currentQuestion?.explanation }}</p>
+        </div>
+
+        <div class="correct-answer" *ngIf="selectedAnswer !== currentQuestion?.correctAnswer">
+          <p class="label">Correct Answer:</p>
+          <p class="answer"><strong>{{ currentQuestion?.correctAnswer }}</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button 
+        class="btn-secondary"
+        [disabled]="progress.currentQuestionIndex === 0"
+        (click)="previousQuestion()">
+        ← Previous
+      </button>
+
+      <div class="button-group">
+        <button 
+          class="btn-secondary"
+          (click)="skipQuestion()"
+          *ngIf="!showFeedback">
+          Skip
+        </button>
+
+        <button 
+          class="btn-primary"
+          [disabled]="!canSubmit()"
+          (click)="submitAnswer()"
+          *ngIf="!showFeedback">
+          Check Answer
+        </button>
+
+        <button 
+          class="btn-primary"
+          (click)="nextQuestion()"
+          *ngIf="showFeedback">
+          {{ isLastQuestion() ? 'Finish Quiz' : 'Next Question' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

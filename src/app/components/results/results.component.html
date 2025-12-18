@@ -1,0 +1,114 @@
+<div class="results-wrapper" *ngIf="statistics">
+  <!-- Results Card -->
+  <div class="results-card">
+    <!-- Header Section -->
+    <div class="results-header">
+      <div class="performance-icon">{{ getPerformanceIcon() }}</div>
+      <h2 class="results-title">{{ performanceLevel }}!</h2>
+      <p class="subtitle">You've completed the quiz</p>
+    </div>
+
+    <!-- Score Section -->
+    <div class="score-section">
+      <div class="main-score">
+        <div class="accuracy-circle">
+          <svg viewBox="0 0 120 120" class="progress-ring">
+            <circle
+              cx="60"
+              cy="60"
+              r="54"
+              fill="none"
+              stroke="#e0e0e0"
+              stroke-width="8" />
+            <circle
+              cx="60"
+              cy="60"
+              r="54"
+              fill="none"
+              stroke="url(#gradient)"
+              stroke-width="8"
+              stroke-dasharray="339.29"
+              [style.stroke-dashoffset]="339.29 - (339.29 * statistics.accuracy / 100)"
+              stroke-linecap="round"
+              class="progress-ring-fill" />
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color: #667eea; stop-opacity: 1" />
+                <stop offset="100%" style="stop-color: #764ba2; stop-opacity: 1" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="score-text">{{ statistics.accuracy | number: '0.1-1' }}%</div>
+        </div>
+
+        <div class="score-details">
+          <div class="detail">
+            <span class="label">Correct</span>
+            <span class="value">{{ statistics.correctAnswers }}/{{ statistics.totalQuestions }}</span>
+          </div>
+          <div class="divider"></div>
+          <div class="detail">
+            <span class="label">Time</span>
+            <span class="value">{{ formatTime(statistics.timeSpent) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statistics Grid -->
+    <div class="statistics-grid">
+      <div class="stat-card correct">
+        <div class="stat-number">{{ statistics.correctAnswers }}</div>
+        <div class="stat-label">Correct Answers</div>
+      </div>
+      <div class="stat-card incorrect">
+        <div class="stat-number">{{ statistics.incorrectAnswers }}</div>
+        <div class="stat-label">Incorrect Answers</div>
+      </div>
+      <div class="stat-card accuracy">
+        <div class="stat-number">{{ (statistics.timeSpent / statistics.totalQuestions / 1000) | number: '0.0-2' }}s</div>
+        <div class="stat-label">Avg Time/Question</div>
+      </div>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="summary-section">
+      <h3>Key Insights</h3>
+      <ul class="insights-list">
+        <li *ngIf="statistics.accuracy >= 80">
+          <span class="icon">✓</span>
+          <span>Great understanding of Agentforce concepts</span>
+        </li>
+        <li *ngIf="statistics.accuracy < 80">
+          <span class="icon">→</span>
+          <span>Review the explanations for incorrect answers</span>
+        </li>
+        <li>
+          <span class="icon">📚</span>
+          <span>Consider retaking this test for better retention</span>
+        </li>
+        <li>
+          <span class="icon">🎯</span>
+          <span>Try different practice tests to broaden your knowledge</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button class="btn-secondary" (click)="retryQuiz()">
+        ← Back to Tests
+      </button>
+      <button class="btn-primary" (click)="retryQuiz()">
+        Retake Quiz
+      </button>
+    </div>
+  </div>
+
+  <!-- Motivational Message -->
+  <div class="motivational-message">
+    <p *ngIf="statistics.accuracy >= 90">Outstanding! You're ready for the Salesforce Agentforce certification! 🚀</p>
+    <p *ngIf="statistics.accuracy >= 70 && statistics.accuracy < 90">Excellent progress! Keep practicing to master all concepts. 💪</p>
+    <p *ngIf="statistics.accuracy < 70">Great start! Review the material and try again to improve your score. 📖</p>
+  </div>
+</div>

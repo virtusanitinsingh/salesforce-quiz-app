@@ -1,0 +1,22 @@
+<div class="quiz-container">
+  <ng-container [ngSwitch]="currentView">
+    <!-- Test Selection View -->
+    <app-test-selection 
+      *ngSwitchCase="'selection'"
+      (testSelected)="onTestSelected($event)">
+    </app-test-selection>
+
+    <!-- Quiz View -->
+    <app-quiz-card 
+      *ngSwitchCase="'quiz'"
+      [progress]="currentProgress!"
+      (quizFinished)="onQuizFinished()">
+    </app-quiz-card>
+
+    <!-- Results View -->
+    <app-results 
+      *ngSwitchCase="'results'"
+      (returnToSelection)="onReturnToSelection()">
+    </app-results>
+  </ng-container>
+</div>
