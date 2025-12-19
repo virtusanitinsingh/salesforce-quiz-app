@@ -231,447 +231,667 @@ export const practiceTest1: QuizTest = {
 export const practiceTest2: QuizTest = {
   id: 'practice_test_2',
   title: 'Agentforce & Einstein Generative AI – Practice Test 2',
-  totalQuestions: 40,
+  totalQuestions: 60,
   questions: [
     {
-      id: 21,
-      question: "Which Salesforce feature ensures generative AI responses comply with data privacy and security policies?",
+      id: 1,
+      question: "What is true of Agentforce Testing Center?",
       options: {
-        "A": "Einstein Prompt Builder",
-        "B": "Einstein Trust Layer",
-        "C": "Agentforce Reasoning Engine"
+        "A": "Agentforce Testing Center can only be used in sandbox environments.",
+        "B": "Agentforce Testing Center allows testing without consuming Einstein Requests.",
+        "C": "Agentforce Testing Center can only be used in a production environment."
       },
       correctAnswer: "B",
-      explanation: "The Einstein Trust Layer enforces data masking, zero data retention, audit logging, and compliance controls for AI interactions."
+      explanation: "Agentforce Testing Center allows teams to test agents safely without consuming Einstein Requests, making it ideal for large-scale and repeatable testing prior to production deployment."
     },
     {
-      id: 22,
-      question: "What is the primary purpose of the Agentforce Reasoning Engine?",
+      id: 2,
+      question: "Universal Containers tests a new Einstein Generative AI feature for personalized emails. Draft emails sometimes contain placeholders for contact attributes. What is the most likely explanation?",
       options: {
-        "A": "Generate natural language responses",
-        "B": "Determine topics and select appropriate actions",
-        "C": "Store conversation history"
+        "A": "The merge field syntax is incorrect.",
+        "B": "The user lacks field-level security or object permissions.",
+        "C": "The user's locale language is not supported by Prompt Builder."
       },
       correctAnswer: "B",
-      explanation: "The reasoning engine interprets user intent, identifies the correct topic, and selects the appropriate action sequence."
+      explanation: "When users lack field-level security or object permissions, Prompt Builder cannot resolve merge fields, resulting in placeholders appearing in generated content."
     },
     {
-      id: 23,
-      question: "Which grounding technique should be used to include structured CRM record data in a prompt?",
+      id: 3,
+      question: "What is the correct process to leverage Prompt Builder in a Salesforce org?",
       options: {
-        "A": "Knowledge grounding",
-        "B": "Record Snapshots",
-        "C": "Semantic search"
-      },
-      correctAnswer: "B",
-      explanation: "Record Snapshots allow structured CRM fields to be included in prompts using field sets."
-    },
-    {
-      id: 24,
-      question: "Which prompt template type allows multiple unrelated objects as inputs?",
-      options: {
-        "A": "Record Summary",
-        "B": "Field Generation",
-        "C": "Flex"
-      },
-      correctAnswer: "C",
-      explanation: "Flex templates support multiple inputs, including unrelated standard and custom objects."
-    },
-    {
-      id: 25,
-      question: "What happens if a user does not have field-level access to grounded fields?",
-      options: {
-        "A": "The prompt fails",
-        "B": "The field values appear as placeholders",
-        "C": "The agent ignores grounding"
-      },
-      correctAnswer: "B",
-      explanation: "If users lack field-level access, placeholders appear instead of populated values."
-    },
-    {
-      id: 26,
-      question: "Which Agentforce testing capability supports large-scale, repeatable utterance testing?",
-      options: {
-        "A": "Agent Builder Preview",
-        "B": "Agentforce Testing Center",
-        "C": "Model Playground"
-      },
-      correctAnswer: "B",
-      explanation: "Agentforce Testing Center supports CSV-based, repeatable utterance testing at scale."
-    },
-    {
-      id: 27,
-      question: "What determines which action is selected when multiple actions match an utterance?",
-      options: {
-        "A": "Action execution order",
-        "B": "Action Instructions uniqueness",
-        "C": "Agent user permissions"
-      },
-      correctAnswer: "B",
-      explanation: "Clear, unique Action Instructions help the reasoning engine select the correct action."
-    },
-    {
-      id: 28,
-      question: "Which object stores the transcript of a messaging conversation?",
-      options: {
-        "A": "Case",
-        "B": "Messaging End User",
-        "C": "Messaging Session"
-      },
-      correctAnswer: "C",
-      explanation: "Messaging Session stores the full conversation transcript between the agent and customer."
-    },
-    {
-      id: 29,
-      question: "Which permission is required to execute a prompt template?",
-      options: {
-        "A": "Prompt Template Manager",
-        "B": "Prompt Template User",
-        "C": "Data Cloud Admin"
-      },
-      correctAnswer: "B",
-      explanation: "Prompt Template User permission allows users to run prompt templates."
-    },
-    {
-      id: 30,
-      question: "Once a data source is selected for an Agentforce Data Library, what is true?",
-      options: {
-        "A": "The data source can be changed later",
-        "B": "The data source can be changed via Data Cloud settings",
-        "C": "The data source cannot be changed"
-      },
-      correctAnswer: "C",
-      explanation: "After creation, the data source for a Data Library is immutable."
-    },
-    {
-      id: 31,
-      question: "Which flow type should be used to bring Data Cloud unified object data into prompt templates?",
-      options: {
-        "A": "Template-triggered prompt flow",
-        "B": "Data Cloud-triggered flow",
-        "C": "Unified-object linking flow"
+        "A": "Select template type, author prompt, add CRM grounding, choose model, validate outputs.",
+        "B": "Connect Data Cloud to CRM records and test API calls.",
+        "C": "Select a standard Salesforce prompt, associate it with an object, and link it to an action."
       },
       correctAnswer: "A",
-      explanation: "Template-triggered prompt flows are designed to supply data to prompt templates."
+      explanation: "Prompt Builder requires selecting the appropriate template type, authoring prompts in the workspace, grounding them with CRM data, choosing a model, and validating outputs through testing."
     },
     {
-      id: 32,
-      question: "Which tool helps review real-world utterances before activating a custom Agent action?",
+      id: 4,
+      question: "UC configured PDF ingestion in Data Cloud and created a search index. While configuring a retriever, a required field is missing. How should UC resolve this?",
       options: {
-        "A": "Agent Builder",
-        "B": "Model Playground",
-        "C": "Agentforce"
+        "A": "Add the missing field to the search index and reprocess.",
+        "B": "Modify the retriever's field mapping to skip the missing field.",
+        "C": "Create a new custom Data Cloud object that includes the field."
       },
       correctAnswer: "A",
-      explanation: "Agent Builder allows testing and validating utterances against actions before activation."
+      explanation: "Retrievers can only access fields that are included in the search index. The missing field must be added to the index and reprocessed."
     },
     {
-      id: 33,
-      question: "When is an Agentforce Data Library most useful?",
+      id: 5,
+      question: "UC reports mismatches in AI-generated summaries for a custom object. Which prompt design practice should be prioritized?",
       options: {
-        "A": "When vectorizing Snowflake data",
-        "B": "When answering from curated, indexed documents",
-        "C": "When joining multiple objects via IDs"
+        "A": "Use clear instructions, consistent structure, proper grounding, and iterative refinement.",
+        "B": "Deploy a larger LLM model and increase token limits.",
+        "C": "Submit a prompt review case to Salesforce and rely on Playground testing."
       },
-      correctAnswer: "B",
-      explanation: "Data Libraries excel when grounding responses in curated, indexed document repositories."
+      correctAnswer: "A",
+      explanation: "Clear instructions, consistent structure, proper grounding, and iterative refinement are the most effective ways to reduce hallucinations and mismatches in generated output."
     },
     {
-      id: 34,
-      question: "Which object stores agent-to-customer messaging conversations?",
+      id: 6,
+      question: "What is the main benefit of using Knowledge articles in an Agentforce Data Library?",
       options: {
-        "A": "Case",
-        "B": "Messaging End User",
-        "C": "Messaging Session"
+        "A": "They enable natural language search across all web content.",
+        "B": "They allow indexing of external third-party databases.",
+        "C": "They provide a structured, searchable repository of approved documents."
       },
       correctAnswer: "C",
-      explanation: "Messaging Session holds the conversation transcript."
+      explanation: "Knowledge articles ensure agents retrieve trusted, curated, and approved information, improving accuracy and reliability of responses."
     },
     {
-      id: 35,
-      question: "Users receive incorrect summaries when multiple custom actions exist. What should be reviewed?",
+      id: 7,
+      question: "What is the primary function of the reasoning engine in Agentforce?",
       options: {
-        "A": "Action Instructions uniqueness",
-        "B": "Agent assignment",
-        "C": "Input/output types"
+        "A": "Interpret user intent and determine which topics and actions should be executed.",
+        "B": "Store and manage conversation histories.",
+        "C": "Providing real-time natural language responses."
       },
       correctAnswer: "A",
-      explanation: "Overlapping Action Instructions can confuse the reasoning engine."
+      explanation: "The reasoning engine interprets user intent and determines which topics and actions should be executed by the agent."
     },
     {
-      id: 36,
-      question: "What is required when deploying Apex used by Agent actions?",
+      id: 8,
+      question: "When a customer chat is initiated, which Salesforce feature generates AI replies or draft emails based on recommended Knowledge articles?",
       options: {
-        "A": "Less than 75% coverage is allowed",
-        "B": "At least 75% coverage and dependencies included",
-        "C": "Coverage rules do not apply"
+        "A": "Einstein Knowledge Recommendations",
+        "B": "Einstein Service Replies",
+        "C": "Einstein Service Replies"
       },
-      correctAnswer: "B",
-      explanation: "Standard Salesforce deployment rules apply, including minimum test coverage."
+      correctAnswer: "C",
+      explanation: "Einstein Service Replies uses Knowledge articles to generate contextual replies and email drafts during customer service interactions."
     },
     {
-      id: 37,
-      question: "Why might generated emails show unresolved placeholders?",
-      options: {
-        "A": "Einstein Sales Emails not enabled",
-        "B": "User lacks field access",
-        "C": "Unsupported locale"
-      },
-      correctAnswer: "B",
-      explanation: "Without field-level security, merge fields remain unresolved."
-    },
-    {
-      id: 38,
-      question: "Which standard Agent action helps draft personalized sales emails?",
-      options: {
-        "A": "Draft or Revise Sales Email",
-        "B": "Find Similar Opportunities",
-        "C": "Summarize Record"
-      },
-      correctAnswer: "A",
-      explanation: "Draft or Revise Sales Email generates personalized outreach content."
-    },
-    {
-      id: 39,
-      question: "Which prompt template supports human-in-the-loop review?",
+      id: 9,
+      question: "Leadership wants a dynamic form field populated by an LLM while keeping a human in the loop. Which prompt template type should be used?",
       options: {
         "A": "Field Generation",
         "B": "Record Summary",
         "C": "Sales Email"
       },
+      correctAnswer: "A",
+      explanation: "Field Generation templates populate CRM fields while allowing users to review and edit AI-generated content before saving."
+    },
+    {
+      id: 10,
+      question: "A Field Generation prompt works for many records but fails randomly with token limit errors. What is the cause?",
+      options: {
+        "A": "The template type does not support large datasets.",
+        "B": "Different records produce different token volumes due to variable field lengths.",
+        "C": "Token limits fluctuate with system demand."
+      },
       correctAnswer: "B",
-      explanation: "Record Summary allows review before saving generated content."
+      explanation: "Different records produce different token volumes due to variable field lengths and related data, leading to intermittent token limit failures."
+    },
+    {
+      id: 11,
+      question: "In the context of retrievers and search indexes, what best describes the data preparation process in Data Cloud?",
+      options: {
+        "A": "Uploading raw data directly without preprocessing.",
+        "B": "Loading source data, chunking content, generating embeddings, and storing in a vector database.",
+        "C": "Real-time ingestion without preprocessing to enable dynamic grounding"
+      },
+      correctAnswer: "B",
+      explanation: "Data preparation for retrievers includes loading source data, chunking content, generating embeddings, and storing it in a vector database optimized for semantic search."
+    },
+    {
+      id: 12,
+      question: "A Field Generation prompt template is active, but the Sparkle icon does not appear on the target field. What critical step was missed?",
+      options: {
+        "A": "The prompt template was not associated with the field on the Lightning Record Page.",
+        "B": "The Lightning Experience is disabled.",
+        "C": "Granting Edit permission on the field"
+      },
+      correctAnswer: "A",
+      explanation: "Field Generation prompts must be explicitly associated with the field on the Lightning Record Page for the Sparkle icon to appear."
+    },
+    {
+      id: 13,
+      question: "Why is the Salesforce Knowledge option unavailable when configuring an Einstein Data Library?",
+      options: {
+        "A": "Salesforce Knowledge is not enabled at the org level.",
+        "B": "A Data Cloud license has not been provisioned.",
+        "C": "Lightning Experience is disabled"
+      },
+      correctAnswer: "A",
+      explanation: "Einstein Data Libraries only expose Salesforce Knowledge as a data source when Salesforce Knowledge is enabled at the org level."
+    },
+    {
+      id: 14,
+      question: "Which tool is used to route a Service Agent conversation to a human agent queue?",
+      options: {
+        "A": "Agent Configuration Tool",
+        "B": "Outbound Omni-Channel Flow",
+        "C": "Screen Flow"
+      },
+      correctAnswer: "B",
+      explanation: "Outbound Omni-Channel Flows are used to escalate or route conversations from AI agents to human agent queues."
+    },
+    {
+      id: 15,
+      question: "Why is the Preview button disabled for a Flex prompt template?",
+      options: {
+        "A": "The template has not been activated in production.",
+        "B": "The template lacks a defined system prompt.",
+        "C": "Related records required for grounding were not selected"
+      },
+      correctAnswer: "C",
+      explanation: "Flex prompt previews require record context. Without selecting related records, Salesforce disables the preview option."
+    },
+    {
+      id: 16,
+      question: "An Agentforce Service Agent cannot assist with a new custom Product Replacement object. What change is required?",
+      options: {
+        "A": "Enable the object in Agentforce configuration.",
+        "B": "Grant Read access to the object via profiles or permission sets.",
+        "C": "Add the object to Prompt Builder"
+      },
+      correctAnswer: "B",
+      explanation: "Agents can only reason over objects they have at least Read access to through profiles or permission sets."
+    },
+    {
+      id: 17,
+      question: "What is the correct method to assign an action to an Agent in Agentforce?",
+      options: {
+        "A": "Assign directly in the action definition.",
+        "B": "Assign the action to a Topic in Agent Builder.",
+        "C": "Assign the action in Action Builder only"
+      },
+      correctAnswer: "B",
+      explanation: "Actions must first be assigned to Topics in Agent Builder. Agents use Topics to determine which actions they can execute."
+    },
+    {
+      id: 18,
+      question: "Which object stores the conversation transcript between the customer and the agent?",
+      options: {
+        "A": "Case",
+        "B": "Conversation Record",
+        "C": "Messaging Session"
+      },
+      correctAnswer: "C",
+      explanation: "In Salesforce digital engagement, the Messaging Session object stores the full conversation transcript between the customer and the agent. The Case may be associated, but the transcript itself resides in Messaging Session."
+    },
+    {
+      id: 19,
+      question: "A Salesforce Administrator wants to generate personalized, targeted emails using LLMs and reuse templates for different products and customers. Which solution approach should the admin leverage?",
+      options: {
+        "A": "Prompt Builder with Record Snapshots",
+        "B": "Custom Apex-based email generation",
+        "C": "Create a Sales Email prompt template type"
+      },
+      correctAnswer: "C",
+      explanation: "Sales Email prompt templates are designed specifically to generate AI-powered, personalized email content using LLMs while allowing reuse across products and customers."
+    },
+    {
+      id: 20,
+      question: "Universal Containers wants its AI agent to answer customer questions with precise and up-to-date information. How does an Agentforce Data Library enable this?",
+      options: {
+        "A": "By automatically ingesting, indexing data, and creating retrievers for grounding.",
+        "B": "By manually validating each customer query response.",
+        "C": "It performs taxonomical classification for keyword search only"
+      },
+      correctAnswer: "A",
+      explanation: "Agentforce Data Libraries automatically ingest and index data, and create retrievers that agents and prompts use for grounding responses with relevant, up-to-date information."
+    },
+    {
+      id: 21,
+      question: "How is Data Cloud leveraged by the Answer Questions with Knowledge action in Agentforce?",
+      options: {
+        "A": "Data Cloud transforms Knowledge articles into vector embeddings.",
+        "B": "Knowledge articles are indexed and stored in Data Cloud for efficient retrieval.",
+        "C": "Data Cloud is not required because articles are accessed directly from CRM"
+      },
+      correctAnswer: "B",
+      explanation: "When Knowledge is used with Agentforce, articles are indexed and stored in Data Cloud, enabling efficient retrieval and grounding during agent interactions."
+    },
+    {
+      id: 22,
+      question: "Universal Containers wants post-call visibility into mentions of competitors, products, and custom phrases. Which feature should be used?",
+      options: {
+        "A": "Call Insights",
+        "B": "Call Insights",
+        "C": "Call Explorer"
+      },
+      correctAnswer: "B",
+      explanation: "Call Insights analyzes call transcripts to surface mentions of competitors, products, and key phrases, providing actionable intelligence to sales teams."
+    },
+    {
+      id: 23,
+      question: "Universal Containers wants its AI agent to return responses quickly and minimize latency when grounding responses. Which retriever configuration should be prioritized?",
+      options: {
+        "A": "Define retriever filters to reduce search scope.",
+        "B": "Increase the maximum number of retriever results.",
+        "C": "Enable dynamic retriever mode to modify index structure at runtime"
+      },
+      correctAnswer: "A",
+      explanation: "Well-defined retriever filters reduce the search scope, improving query efficiency and minimizing response latency during grounding."
+    },
+    {
+      id: 24,
+      question: "Universal Containers wants to test a large, repeatable number of utterances before deploying agents to production. What should the Agentforce Specialist recommend?",
+      options: {
+        "A": "Create a CSV file with test cases and upload to Agentforce Testing Center.",
+        "B": "Manually test utterances in Agent Builder.",
+        "C": "Create a CSV file with test cases in Agentforce Testing Center using the testing template"
+      },
+      correctAnswer: "C",
+      explanation: "The Agentforce Testing Center supports bulk and repeatable testing through CSV uploads, making it ideal for large-scale, pre-production agent validation."
+    },
+    {
+      id: 25,
+      question: "All sales users share the same profile, but one user cannot see the generative AI field icon next to a summary field. What is the most likely cause?",
+      options: {
+        "A": "The user's browser does not support JavaScript.",
+        "B": "The user lacks the Prompt Template User permission set",
+        "C": "The user lacks the Prompt Template User permission set"
+      },
+      correctAnswer: "B",
+      explanation: "Visibility of generative AI field actions depends on the Prompt Template User permission set. Without it, the AI icon does not appear even if the profile is the same."
+    },
+    {
+      id: 26,
+      question: "Universal Containers launched a pilot with Agentforce Agents. How should the Agentforce Specialist monitor agent usability and action assignment?",
+      options: {
+        "A": "Review individual user chat logs manually.",
+        "B": "Use Agent Analytics for built-in insights.",
+        "C": "Query agent logs using the Metadata API"
+      },
+      correctAnswer: "B",
+      explanation: "Agent Analytics provides built-in insights into agent performance, usability, action usage, and user interactions, making it the correct monitoring tool."
+    },
+    {
+      id: 27,
+      question: "Universal Containers (UC) users are complaining that agent answers are not satisfactory. The agent is using PDF files as a knowledge source. How should UC troubleshoot this issue?",
+      options: {
+        "A": "Check PDF file upload size and format.",
+        "B": "Verify the retriever configuration is using default settings.",
+        "C": "Verify the retriever's filter criteria and data source connection."
+      },
+      correctAnswer: "C",
+      explanation: "Poor answers from PDF-based grounding are commonly caused by overly restrictive retriever filters or broken data source connections. Verifying retriever filters and connectivity ensures relevant documents are being retrieved and grounded correctly."
+    },
+    {
+      id: 28,
+      question: "Universal Containers wants to leverage the Record Snapshots grounding feature in a prompt template. What preparations are required?",
+      options: {
+        "A": "Configure the page layout of the master record type.",
+        "B": "Enable Record Snapshots in Prompt Builder settings.",
+        "C": "Create a field set for all the fields to be grounded."
+      },
+      correctAnswer: "A",
+      explanation: "Record Snapshots use the page layout of the master record type to determine which fields are available for grounding. Proper page layout configuration is required before using this feature."
+    },
+    {
+      id: 29,
+      question: "How does the AI retriever function within Data Cloud?",
+      options: {
+        "A": "It searches indexed content contextually to retrieve relevant documents.",
+        "B": "It stores raw data from multiple sources.",
+        "C": "It automatically extracts and reformats raw data from diverse sources into standardized datasets for use in historical trend analysis and forecasting."
+      },
+      correctAnswer: "A",
+      explanation: "The AI retriever searches indexed content contextually to retrieve the most relevant documents, which are then used to ground AI responses with accurate and verifiable information."
+    },
+    {
+      id: 30,
+      question: "Universal Containers currently tracks Leads with a custom object. UC is preparing to implement the Sales Development Representative (SDR) Agent. Which consideration should UC keep in mind?",
+      options: {
+        "A": "Agentforce SDR only supports the standard Lead object.",
+        "B": "Agentforce SDR can use any custom object configured similarly to Leads.",
+        "C": "Agentforce SDR only supports custom objects associated with Accounts."
+      },
+      correctAnswer: "A",
+      explanation: "The Agentforce SDR is designed to work with the standard Lead object. Custom Lead objects are not supported, which is a critical consideration before implementation."
+    },
+    {
+      id: 31,
+      question: "Universal Containers is planning a marketing email about products that most closely match a customer's expressed interests. What should the company use to generate this email?",
+      options: {
+        "A": "Prompt Builder with a Sales Email template type",
+        "B": "Custom sales email prompt templates",
+        "C": "Standard email marketing template using Apex or flows for matching interest in products."
+      },
+      correctAnswer: "B",
+      explanation: "Custom sales email prompt templates allow grounding with customer interests and product data, enabling personalized, AI-generated marketing emails."
+    },
+    {
+      id: 32,
+      question: "Universal Containers implements three custom actions to get three distinct types of sales summaries for its users. Users are complaining that they are not getting the right summary based on their utterances. What should the Agentforce Specialist investigate as the root cause?",
+      options: {
+        "A": "Ensure Action Instructions are unique and clearly differentiated.",
+        "B": "Reduce the number of custom actions to avoid confusion.",
+        "C": "Review that the custom action is assigned to an Agent."
+      },
+      correctAnswer: "A",
+      explanation: "If multiple actions have similar or overlapping instructions, the LLM may invoke the wrong action. Ensuring unique and clearly differentiated Action Instructions is critical."
+    },
+    {
+      id: 33,
+      question: "Universal Containers plans to enhance the customer support team's productivity using AI. Which specific use case necessitates the use of Prompt Builder?",
+      options: {
+        "A": "Organizing customer complaint data.",
+        "B": "Creating a draft of a support bulletin post for new product patches.",
+        "C": "Creating a draft of a support bulletin post for new product patches."
+      },
+      correctAnswer: "B",
+      explanation: "Prompt Builder is used for generative content creation such as drafting support bulletins, emails, or summaries, making it the correct choice for this use case."
+    },
+    {
+      id: 34,
+      question: "An Agentforce Specialist is creating a custom action for Agentforce. Which setting should the Specialist test and iterate on to ensure the action performs as expected?",
+      options: {
+        "A": "Action Instructions",
+        "B": "Action Input/Output types",
+        "C": "Action Input"
+      },
+      correctAnswer: "A",
+      explanation: "Action Instructions guide the LLM on when and how to invoke the action. Iterating on these instructions is essential to ensure correct and consistent behavior."
+    },
+    {
+      id: 35,
+      question: "Universal Containers deployed the new Agentforce Sales Development Representative (SDR) into production, but sales reps are saying they cannot find it. What is causing this issue?",
+      options: {
+        "A": "The SDR Agent requires a separate app page.",
+        "B": "Sales rep user profiles are missing the Use SDR Agent permission set.",
+        "C": "Sales rep user profiles are missing the Allow SDR Agent permission."
+      },
+      correctAnswer: "B",
+      explanation: "Access to the SDR Agent is controlled via a permission set. If users cannot see the agent, they are most likely missing the required 'Use SDR Agent' permission set."
+    },
+    {
+      id: 36,
+      question: "A sales manager is using Agent Assistant to streamline their daily tasks. They ask the agent to \"Show me a list of my open opportunities.\" How does the large language model (LLM) in Agentforce identify and execute the action to show the sales manager a list of open opportunities?",
+      options: {
+        "A": "The LLM uses a planner to interpret intent, identify relevant topics and actions, build a plan, and execute the necessary actions.",
+        "B": "The LLM retrieves the action from a predefined list based on keyword matching.",
+        "C": "Using a dialog pattern, the LLM matches the user query to the available topic and action and then performs the action."
+      },
+      correctAnswer: "A",
+      explanation: "Agentforce uses an LLM-driven planner that dynamically interprets user intent, identifies relevant topics and actions, builds a plan, and executes the necessary actions to retrieve and present data."
+    },
+    {
+      id: 37,
+      question: "Universal Containers (UC) wants to use Flow to bring data from unified Data Cloud objects to prompt templates. Which type of flow should UC use?",
+      options: {
+        "A": "Record-triggered flow",
+        "B": "Record-triggered flows",
+        "C": "Template-triggered prompt flow"
+      },
+      correctAnswer: "C",
+      explanation: "Template-triggered prompt flows are specifically designed to pass data from Data Cloud objects into prompt templates at runtime."
+    },
+    {
+      id: 38,
+      question: "An Agentforce Agent has been developed with multiple topics and Agent Actions that use flows and Apex. Which options are available for deploying these to production?",
+      options: {
+        "A": "Deploy using change sets or Salesforce CLI / Metadata API.",
+        "B": "Deploy flows and Apex in change sets, then manually recreate agents.",
+        "C": "Deploy flows and Apex normally and manually recreate agent-related items in production."
+      },
+      correctAnswer: "A",
+      explanation: "Agentforce metadata, along with flows and Apex, can be deployed using standard Salesforce deployment mechanisms such as Change Sets or the Salesforce CLI/Metadata API."
+    },
+    {
+      id: 39,
+      question: "After configuring and saving a Salesforce Agentforce Data Library (regardless of the data source), which components are automatically created and available in Data Cloud?",
+      options: {
+        "A": "A data storage, a visualization dashboard, and a predictive model.",
+        "B": "A data stream, a search index, and a retriever.",
+        "C": "A data pipeline, an indexing engine, and a query processor"
+      },
+      correctAnswer: "B",
+      explanation: "When an Agentforce Data Library is created, Data Cloud automatically provisions a data stream, builds a search index, and creates a retriever for grounding AI responses."
     },
     {
       id: 40,
-      question: "How does an Agentforce Data Library simplify accurate AI responses?",
+      question: "An Agentforce Specialist is tasked with creating a prompt template for a sales team that generates a summary of all related opportunities for a given Account. Which grounding technique should be used?",
       options: {
-        "A": "Uses OCR and SQL queries",
-        "B": "Creates default retrievers and indexes automatically",
-        "C": "Performs keyword-only searches"
+        "A": "Prompt templates can directly reference standard related lists using merge fields.",
+        "B": "Use API calls to fetch related opportunity data.",
+        "C": "Use formula fields to reference the Einstein related list of opportunities."
       },
-      correctAnswer: "B",
-      explanation: "Data Libraries automatically handle ingestion, indexing, and retriever creation."
+      correctAnswer: "A",
+      explanation: "Prompt templates can directly reference standard related lists using merge fields, making this the correct and supported approach."
     },
     {
       id: 41,
-      question: "How are actions assigned to an Agent?",
+      question: "Once a data source is chosen for an Agentforce Data Library, what is true about changing that data source later?",
       options: {
-        "A": "Assign to Topic in Action Builder",
-        "B": "Assign to Topic in Agent Builder",
-        "C": "Assign directly from action detail page"
+        "A": "The data source can be changed by re-configuring the library.",
+        "B": "The data source can be changed by migrating to a new Data Library.",
+        "C": "The data source cannot be changed after it is selected."
       },
-      correctAnswer: "B",
-      explanation: "Actions are assigned to topics within Agent Builder."
+      correctAnswer: "C",
+      explanation: "After a data source is selected for a Data Library, it is locked and cannot be changed. A new Data Library must be created to use a different source."
     },
     {
       id: 42,
-      question: "What is the best way to test a large number of utterances?",
+      question: "Universal Containers (UC) wants to make a marketing newsletter and directly use data from five unrelated objects (two standard and three custom) in a prompt template. How should UC accomplish this?",
       options: {
-        "A": "Deploy to sandbox and review logs",
-        "B": "Use Agentforce Testing Center with CSV",
-        "C": "Manually test in LLM UI"
+        "A": "Use a Flex prompt template type to support multiple unrelated object inputs.",
+        "B": "Create five separate prompt templates and merge outputs.",
+        "C": "Create a prompt template-triggered flow to access data from the five objects."
       },
-      correctAnswer: "B",
-      explanation: "Testing Center supports scalable, repeatable testing via CSV."
+      correctAnswer: "A",
+      explanation: "Flex templates support multiple, unrelated object inputs, making them ideal for scenarios requiring data from several unrelated standard and custom objects."
     },
     {
       id: 43,
-      question: "What is the primary role of the reasoning engine?",
+      question: "Based on the user utterance, \"Show me all the customers in New York,\" which standard Agent action will the planner service use?",
       options: {
-        "A": "Generate record queries",
-        "B": "Identify topics and actions",
-        "C": "Respond in natural language"
+        "A": "Query Records",
+        "B": "Find Records",
+        "C": "Select Records"
       },
-      correctAnswer: "B",
-      explanation: "It determines intent and selects actions."
+      correctAnswer: "A",
+      explanation: "The Query Records action is used when filtering records based on conditions such as location or field values."
     },
     {
       id: 44,
-      question: "Which object does the SDR Agent support?",
+      question: "Universal Containers recently added a custom flow for processing returns and created a new Agent Action. What action is required to ensure the Agentforce Service Agent can run this flow?",
       options: {
-        "A": "Standard Lead only",
-        "B": "Opportunities only",
-        "C": "Custom objects only"
+        "A": "Assign the Flow User permission to the Agentforce Service Agent user.",
+        "B": "Enable Flow execution in Agentforce settings.",
+        "C": "Assign the Run Flows permission to the Agentforce Agent user."
       },
-      correctAnswer: "A",
-      explanation: "The SDR Agent currently supports the standard Lead object."
+      correctAnswer: "C",
+      explanation: "Agentforce agents require the Run Flows permission to execute flows as part of Agent Actions."
     },
     {
       id: 45,
-      question: "How can UC use five unrelated objects in one prompt?",
+      question: "A support team handles a high volume of chat interactions and needs fast, accurate responses grounded in the organization's knowledge base. Which Agentforce for Service feature should they use?",
       options: {
-        "A": "Prompt-triggered flow",
-        "B": "Temporary custom object",
-        "C": "Flex prompt template"
+        "A": "Einstein Service Replies",
+        "B": "Einstein Chat Responses",
+        "C": "Einstein Knowledge Recommendations"
       },
-      correctAnswer: "C",
-      explanation: "Flex templates support multiple unrelated inputs."
+      correctAnswer: "A",
+      explanation: "Einstein Service Replies generates AI-driven responses grounded in knowledge articles, ensuring accuracy and consistency in customer support."
     },
     {
       id: 46,
-      question: "How should opportunities be referenced in a prompt template?",
+      question: "Universal Containers (UC) has configured Agentforce Data Library using Knowledge articles. When testing in Agent Builder and the Experience Cloud site, the agent is not responding with grounded Knowledge article information. However, when tested in Prompt Builder, the response returns correctly. What should UC do to troubleshoot the issue?",
       options: {
-        "A": "Formula fields",
-        "B": "Default related list merge fields",
-        "C": "Custom related list merge fields"
+        "A": "Reindex the Knowledge articles in Data Cloud.",
+        "B": "Grant the Agentforce Service Agent user access to the prompt template.",
+        "C": "Ensure the Data Cloud User permission set has been assigned to the Agentforce Service Agent User."
       },
       correctAnswer: "B",
-      explanation: "Default related lists are supported for merge fields."
+      explanation: "If responses work in Prompt Builder but not in Agent Builder or Experience Cloud, the issue is typically permission-related. The Agentforce Service Agent user must have access to the prompt template used for grounding Knowledge articles."
     },
     {
       id: 47,
-      question: "What does data preparation involve in Data Cloud?",
+      question: "A sales manager needs to contact leads at scale with hyper-relevant solutions and customized communications in the most efficient manner possible. Which Salesforce solution best suits this need?",
       options: {
-        "A": "Normalization and governance",
-        "B": "Chunking, vectorizing, and indexing",
-        "C": "Real-time ingestion only"
+        "A": "Einstein Lead Follow-Up",
+        "B": "Prompt Builder",
+        "C": "Prompt Builder"
       },
-      correctAnswer: "B",
-      explanation: "Vector-based retrieval requires chunking and vectorization."
+      correctAnswer: "A",
+      explanation: "Einstein Lead Follow-Up automates personalized outreach to leads at scale, generating hyper-relevant follow-up messages using AI."
     },
     {
       id: 48,
-      question: "How should agents usability be monitored?",
+      question: "Before deploying a new custom Agent action, which testing approach should the Agentforce Specialist use?",
       options: {
-        "A": "Agent Analytics",
-        "B": "Metadata API",
-        "C": "Debug Logs"
+        "A": "Deploy directly to production and monitor results.",
+        "B": "Test real-world utterances in Model Playground or Agent Builder.",
+        "C": "Submit a test request to Salesforce Support."
       },
-      correctAnswer: "A",
-      explanation: "Agent Analytics provides insights into agent usage and performance."
+      correctAnswer: "B",
+      explanation: "Model Playground allows testing and evaluation of multiple real-world user utterances against the model to validate intent recognition and action selection."
     },
     {
       id: 49,
-      question: "What is a best practice for refining prompt accuracy?",
+      question: "Universal Containers wants to find records similar to a given record in an Agent action. How should UC accomplish this?",
       options: {
-        "A": "Clear instructions and effective grounding",
-        "B": "Random prompt testing",
-        "C": "Submitting cases to Salesforce"
+        "A": "Write custom Apex to implement similarity matching.",
+        "B": "Use the standard Agent action 'Find Similar Records'.",
+        "C": "Create a custom flow to query related records."
       },
-      correctAnswer: "A",
-      explanation: "Clear instructions, grounding, and iteration improve accuracy."
+      correctAnswer: "B",
+      explanation: "Salesforce provides a standard Agent action for finding similar records, making it unnecessary to build custom Apex or Flow logic."
     },
     {
       id: 50,
-      question: "Why does a Field Generation prompt not show the sparkle icon?",
+      question: "What is the difference between Prompt Template Manager and Prompt Template User permission sets?",
       options: {
-        "A": "Field not added to Lightning layout",
-        "B": "Layout not reactivated",
-        "C": "Case object unsupported"
+        "A": "Both permission sets provide identical capabilities.",
+        "B": "Template Manager allows creation, Template User allows execution.",
+        "C": "Template User allows creation, Template Manager allows execution."
       },
-      correctAnswer: "A",
-      explanation: "The field must be placed on the Lightning page layout."
+      correctAnswer: "B",
+      explanation: "Prompt Template Manager allows users to create and manage templates, while Prompt Template User enables execution of those templates."
     },
     {
       id: 51,
-      question: "How should irrelevant retriever results be reduced?",
+      question: "What is the minimum test code coverage requirement for Apex invoked by Agent actions?",
       options: {
-        "A": "Define filters",
-        "B": "Change data model object",
-        "C": "Increase max results"
+        "A": "50% code coverage",
+        "B": "75% code coverage",
+        "C": "No coverage requirement for Agent Apex"
       },
-      correctAnswer: "A",
-      explanation: "Filters narrow the retriever scope to relevant data."
+      correctAnswer: "B",
+      explanation: "All Apex deployed to production must meet Salesforce's 75% code coverage requirement, including Apex invoked by Agent Actions."
     },
     {
       id: 52,
-      question: "What components are created when saving a Data Library?",
+      question: "Universal Containers wants to allow users to trigger backend system integrations via natural language queries. What should UC implement?",
       options: {
-        "A": "Pipeline, index engine, query processor",
-        "B": "Connector, dashboard, workflow",
-        "C": "Data stream, search index, retriever"
+        "A": "A custom Agent action calling an existing autolaunched flow.",
+        "B": "A REST API endpoint for direct integration.",
+        "C": "A custom Apex class exposed as a web service."
       },
-      correctAnswer: "C",
-      explanation: "These components enable ingestion and retrieval."
+      correctAnswer: "A",
+      explanation: "A custom Agent action calling an existing autolaunched flow allows natural language queries to trigger backend system integrations."
     },
     {
       id: 53,
-      question: "What is the main benefit of Knowledge articles in Data Libraries?",
+      question: "What should be considered when using Record Snapshots for grounding?",
       options: {
-        "A": "Structured, approved repository",
-        "B": "External website access",
-        "C": "Higher retriever accuracy"
+        "A": "All fields from the record are included regardless of content.",
+        "B": "Empty fields and sections are automatically filtered out.",
+        "C": "Custom fields are excluded by default."
       },
-      correctAnswer: "A",
-      explanation: "Knowledge ensures trusted, approved information."
+      correctAnswer: "B",
+      explanation: "Record Snapshots automatically filter out empty fields and sections to ensure only meaningful data is passed to the prompt."
     },
     {
       id: 54,
-      question: "Why is Knowledge not available when creating a Data Library?",
+      question: "Which integration approach is recommended for connecting external systems to Salesforce generative AI capabilities?",
       options: {
-        "A": "Knowledge not enabled",
-        "B": "Missing Einstein permissions",
-        "C": "Not using Lightning Experience"
+        "A": "Use XML APIs for all integrations.",
+        "B": "Use the REST API for integration.",
+        "C": "Use SOAP APIs exclusively."
       },
-      correctAnswer: "A",
-      explanation: "Salesforce Knowledge must be enabled org-wide."
+      correctAnswer: "B",
+      explanation: "The REST API is the recommended approach for integrating external systems with Salesforce generative AI capabilities."
     },
     {
       id: 55,
-      question: "Which tool routes a conversation to a human agent queue?",
+      question: "What benefit does enabling 'Enrich event logs with conversation data' provide for Agentforce specialists?",
       options: {
-        "A": "Screen Flow",
-        "B": "Prompt Flow",
-        "C": "Outbound Omni-Channel Flow"
+        "A": "Unlimited data retention for all conversations.",
+        "B": "Automatic transcription of voice interactions.",
+        "C": "Session-level conversation data visibility for up to seven days."
       },
       correctAnswer: "C",
-      explanation: "Outbound Omni-Channel Flow enables escalation to human agents."
+      explanation: "Enabling 'Enrich event logs with conversation data' allows Agentforce Specialists to view recent session-level conversation data, including user inputs and agent responses, retained for up to seven days."
     },
     {
       id: 56,
-      question: "What does enabling 'Enrich event logs with conversation data' allow?",
+      question: "How does the reasoning engine handle requests with multiple possible actions?",
       options: {
-        "A": "Unlimited reporting",
-        "B": "Click-path tracking",
-        "C": "Session data visibility for 7 days"
+        "A": "It randomly selects one of the available actions.",
+        "B": "It interprets intent, identifies relevant topics and actions, and determines execution order.",
+        "C": "It requires manual user confirmation for each action."
       },
-      correctAnswer: "C",
-      explanation: "Conversation data is retained for 7 days for analysis."
+      correctAnswer: "B",
+      explanation: "The LLM interprets user intent, identifies the most relevant topic and actions, and determines the appropriate execution order to fulfill the request."
     },
     {
       id: 57,
-      question: "How does the LLM execute a request for open opportunities?",
+      question: "For which use case are Agentforce Data Libraries best suited?",
       options: {
-        "A": "Interprets intent, plans actions, executes retrieval",
-        "B": "Matches static dialog rules",
-        "C": "Uses predefined scripts"
+        "A": "Real-time transactional data processing.",
+        "B": "Grounding AI responses in curated, indexed documents like policies and procedures.",
+        "C": "Storing unstructured customer feedback."
       },
-      correctAnswer: "A",
-      explanation: "The LLM dynamically plans and executes actions."
+      correctAnswer: "B",
+      explanation: "Agentforce Data Libraries are optimized for grounding AI responses in curated, indexed, and continuously updated documents such as policies and procedures."
     },
     {
       id: 58,
-      question: "Which use case requires Prompt Builder?",
+      question: "What is the purpose of the 'Draft or Revise Sales Email' standard Agent action?",
       options: {
-        "A": "Drafting support bulletin posts",
-        "B": "Ticket volume forecasting",
-        "C": "Agent performance scoring"
+        "A": "Archive completed sales emails.",
+        "B": "Generate personalized email content using historical communications and customer context.",
+        "C": "Schedule emails for automatic delivery."
       },
-      correctAnswer: "A",
-      explanation: "Prompt Builder is used for generative content creation."
+      correctAnswer: "B",
+      explanation: "The 'Draft or Revise Sales Email' standard Agent action generates personalized email content using historical communications and customer context."
     },
     {
       id: 59,
-      question: "Which approach supports reusable AI-written sales emails?",
+      question: "What is the first step when implementing a new Agentforce Data Library?",
       options: {
-        "A": "Sales Email prompt template",
-        "B": "Standard email templates",
-        "C": "Field Generation template"
+        "A": "Select a data source to ingest.",
+        "B": "Configure search index filters.",
+        "C": "Create retriever queries."
       },
       correctAnswer: "A",
-      explanation: "Sales Email templates support personalization and reuse."
+      explanation: "The first step is selecting the appropriate data source for ingestion, which could be Knowledge articles, PDFs, or custom objects."
     },
     {
       id: 60,
-      question: "Why do token limit errors appear randomly in Field Generation prompts?",
+      question: "How should organizations approach iterative refinement of prompt templates?",
       options: {
-        "A": "Template type limitation",
-        "B": "LLM capacity varies",
-        "C": "Token usage varies by record"
+        "A": "Deploy once and monitor without changes.",
+        "B": "Test outputs, analyze mismatches, refine instructions, and retest iteratively.",
+        "C": "Replace templates entirely if results are unsatisfactory."
       },
-      correctAnswer: "C",
-      explanation: "Dynamic record content causes variable token usage."
+      correctAnswer: "B",
+      explanation: "Iterative refinement involving testing outputs, analyzing mismatches, refining instructions, and retesting is the most effective approach for improving prompt template accuracy."
     }
   ]
 };
