@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+const fs = require('fs');
+
+// Create a simple gradient PNG using canvas
+// We'll use a data URI and convert it to binary
+
+// Create SVG that we can reference directly
+const svgContent = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -13,4 +19,7 @@
   <text x="100" y="400" font-size="32" fill="rgba(255,255,255,0.85)" font-family="Arial, sans-serif">Master Certification with Microlearning</text>
   <circle cx="150" cy="120" r="60" fill="rgba(255,255,255,0.2)"/>
   <text x="150" y="135" font-size="80" text-anchor="middle" fill="white">⚡</text>
-</svg>
+</svg>`;
+
+fs.writeFileSync('og-image.svg', svgContent);
+console.log('✅ SVG image created');

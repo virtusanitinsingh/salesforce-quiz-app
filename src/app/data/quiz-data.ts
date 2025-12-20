@@ -754,8 +754,8 @@ export const practiceTest2: QuizTest = {
       id: 8,
       question: "When a customer chat is initiated, which Salesforce feature generates AI replies or draft emails based on recommended Knowledge articles?",
       options: {
-        "A": "Einstein Knowledge Recommendations",
-        "B": "Einstein Service Replies",
+        "A": "Einstein Grounding",
+        "B": "Einstein Reply Recommendation",
         "C": "Einstein Service Replies"
       },
       correctAnswer: "C",
@@ -906,14 +906,14 @@ export const practiceTest2: QuizTest = {
     },
     {
       id: 22,
-      question: "Universal Containers wants post-call visibility into mentions of competitors, products, and custom phrases. Which feature should be used?",
+      question: "How is Data Cloud leveraged by the Answer Questions with Knowledge action in Agentforce?",
       options: {
-        "A": "Call Insights",
-        "B": "Call Insights",
-        "C": "Call Explorer"
+        "A": "Data Cloud provides real-time data streams to update Knowledge articles",
+        "B": "Data Cloud stores and manages the indexed Knowledge articles",
+        "C": "Data Cloud is not required because articles are accessed directly from CRM"
       },
       correctAnswer: "B",
-      explanation: "Call Insights analyzes call transcripts to surface mentions of competitors, products, and key phrases, providing actionable intelligence to sales teams."
+      explanation: "Data Cloud stores and manages indexed Knowledge articles used for grounding AI responses in Agentforce agents."
     },
     {
       id: 23,
@@ -939,14 +939,14 @@ export const practiceTest2: QuizTest = {
     },
     {
       id: 25,
-      question: "All sales users share the same profile, but one user cannot see the generative AI field icon next to a summary field. What is the most likely cause?",
+      question: "Universal Containers wants to test a large, repeatable number of utterances before deploying an Agentforce agent to production. What approach should be used?",
       options: {
-        "A": "The user's browser does not support JavaScript.",
-        "B": "The user lacks the Prompt Template User permission set",
-        "C": "The user lacks the Prompt Template User permission set"
+        "A": "Deploy the agent in a Q/A sandbox and review Utterance Analysis reports",
+        "B": "Manually test utterances using the Agent LLM UI",
+        "C": "Create a CSV file with test cases in Agentforce Testing Center using the testing template"
       },
-      correctAnswer: "B",
-      explanation: "Visibility of generative AI field actions depends on the Prompt Template User permission set. Without it, the AI icon does not appear even if the profile is the same."
+      correctAnswer: "C",
+      explanation: "Agentforce Testing Center supports CSV-based, repeatable utterance testing at scale, enabling thorough validation before production deployment."
     },
     {
       id: 26,
@@ -1027,14 +1027,14 @@ export const practiceTest2: QuizTest = {
     },
     {
       id: 33,
-      question: "Universal Containers plans to enhance the customer support team's productivity using AI. Which specific use case necessitates the use of Prompt Builder?",
+      question: "Universal Containers implements three custom actions to get three distinct types of sales summaries. Users are getting the wrong summary type. What should be reviewed?",
       options: {
-        "A": "Organizing customer complaint data.",
-        "B": "Creating a draft of a support bulletin post for new product patches.",
-        "C": "Creating a draft of a support bulletin post for new product patches."
+        "A": "Review the Action Instructions to ensure they are unique.",
+        "B": "Ensure the input and output types are correctly chosen.",
+        "C": "Review that the custom action is assigned to an Agent."
       },
-      correctAnswer: "B",
-      explanation: "Prompt Builder is used for generative content creation such as drafting support bulletins, emails, or summaries, making it the correct choice for this use case."
+      correctAnswer: "A",
+      explanation: "If multiple actions have similar or overlapping instructions, the LLM may invoke the wrong action. Ensuring unique and clearly differentiated Action Instructions is critical."
     },
     {
       id: 34,
@@ -1181,14 +1181,14 @@ export const practiceTest2: QuizTest = {
     },
     {
       id: 47,
-      question: "A sales manager needs to contact leads at scale with hyper-relevant solutions and customized communications in the most efficient manner possible. Which Salesforce solution best suits this need?",
+      question: "Universal Containers (UC) has configured Agentforce Data Library using Knowledge articles. When testing in Agent Builder, the agent is not responding correctly, but Prompt Builder returns correct responses. What should UC do?",
       options: {
-        "A": "Einstein Lead Follow-Up",
-        "B": "Prompt Builder",
-        "C": "Prompt Builder"
+        "A": "Create a new permission set that assigns 'Manage Knowledge' and assign it to the Agentforce Service Agent User.",
+        "B": "Ensure the assigned User permission set includes access to the prompt template used to access the Knowledge articles.",
+        "C": "Ensure the Data Cloud User permission set has been assigned to the Agentforce Service Agent User."
       },
-      correctAnswer: "A",
-      explanation: "Einstein Lead Follow-Up automates personalized outreach to leads at scale, generating hyper-relevant follow-up messages using AI."
+      correctAnswer: "B",
+      explanation: "If responses work in Prompt Builder but not in Agent Builder, the Agentforce Service Agent user must have access to the prompt template used for grounding Knowledge articles."
     },
     {
       id: 48,
